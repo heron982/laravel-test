@@ -16,18 +16,41 @@ class UserController extends Controller
         $this->middleware('auth:api');
     }
 
+    /**
+     * Mostrar todos os usuários de autenticação
+     *
+     * @return void
+     */
     public function index()
     {
         $users = User::all();
+        if(!$users) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Nenhum usuário encontrado'
+            ]);
+        }
         return response()->json([
             'status' => 'success',
             'users'  => $users
         ]);
     }
 
+    /**
+     * Mostrar um único usuário de autenticação pelo id
+     *
+     * @param int $id
+     * @return void
+     */
     public function show($id)
     {
         $user = User::find($id);
+        if(!$user) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Nenhum usuário encontrado'
+            ]);
+        }
         return response()->json([
             'status' => 'success',
             'user' => $user
