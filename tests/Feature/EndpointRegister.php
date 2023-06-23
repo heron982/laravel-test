@@ -17,8 +17,10 @@ class EndpointRegister extends TestCase
     {
         $user = User::factory()->make();
 
+
         $response = $this->withHeaders([
-            'Accept' => 'application/json'
+            'Accept' => 'application/json',
+
         ])->post('/api/register', [
             'name'      => $user->name,
             'email'     => $user->email,
