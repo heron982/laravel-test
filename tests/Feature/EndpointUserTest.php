@@ -28,7 +28,6 @@ class EndpointUserTest extends TestCase
 
         $response->assertStatus(200);
     }
-
     /**
      * @test
      * @return void
@@ -43,7 +42,11 @@ class EndpointUserTest extends TestCase
 
         $response->assertStatus(200);
     }
-
+    /**
+     * Cria o usuário de teste. Mas antes verifica se o mesmo já existe.
+     *
+     * @return User
+     */
     public function getUser() : User
     {
         $user = User::where('email', 'test-user@gmail.com')->first();
