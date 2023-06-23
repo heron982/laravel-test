@@ -28,3 +28,5 @@ No terminal, dentro do diretório do projeto, executar os seguintes comandos:
     ``` php artisan migrate```
 * Atualizar Cache do AUTOLOAD
     ```composer dump-autoload```
+* Executar testes de api
+    ```php artisan test --filter NomeDoTeste```
