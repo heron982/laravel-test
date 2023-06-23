@@ -15,6 +15,7 @@ No terminal, dentro do diretório do projeto, executar os seguintes comandos:
  - 1. ```composer update```
  - 2. ```composer install && npm install```
  - 3. ```./vendor/bin/sail up```
+ - 4. (DENTRO DO CONTAINER) ```php artisan migrate```
 
 ### Comandos
 
