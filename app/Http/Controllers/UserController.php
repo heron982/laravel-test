@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AuthUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,7 +18,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = AuthUser::all();
+        $users = User::all();
         return response()->json([
             'status' => 'success',
             'users'  => $users
@@ -28,7 +27,7 @@ class UserController extends Controller
 
     public function show($id)
     {
-        $user = AuthUser::find($id);
+        $user = User::find($id);
         return response()->json([
             'status' => 'success',
             'user' => $user
