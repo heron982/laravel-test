@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 /**
  * Regastar os usuários de autenticação
  */
-class AuthUserController extends Controller
+class UserController extends Controller
 {
     //
     public function __construct()
